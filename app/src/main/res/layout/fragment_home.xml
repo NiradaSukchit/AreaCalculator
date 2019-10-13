@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Button
+        android:id="@+id/button_rectangle"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:text="@string/rectangle" />
+
+    <Button
+        android:id="@+id/button_square"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:text="@string/squre" />
+
+    <Button
+        android:id="@+id/button_right_triangle"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:text="@string/right_triangle" />
+
+    <Button
+        android:id="@+id/button_triangle"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:text="@string/triangle" />
+
+    <Button
+        android:id="@+id/button_circle"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:text="@string/circle" />
+
+    <Button
+        android:id="@+id/button_oval"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:text="@string/oval" />
+
+
+</LinearLayout>

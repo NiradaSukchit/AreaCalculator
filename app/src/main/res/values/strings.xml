@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Area Calculator</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="about_title">Area Calculator</string>
+    <string name="about_content">The application to help you calculate the areas
+                                like Rectangle, Square, Right-Triangle, Triangle,
+                                Oval, and Circle.</string>
+    <string name="rectangle">Rectangle</string>
+    <string name="squre">Square</string>
+    <string name="right_triangle">Right_Triangle</string>
+    <string name="triangle">Triangle</string>
+    <string name="oval">Oval</string>
+    <string name="circle">Circle</string>
+    <string name="name">Nirada Sukchit 59160104</string>
+
+</resources>
