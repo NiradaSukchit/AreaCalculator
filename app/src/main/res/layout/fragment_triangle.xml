@@ -15,10 +15,11 @@
 
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageView3"
             android:layout_width="300dp"
             android:layout_height="220dp"
-            android:src="@drawable/rectangle"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/triangle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,14 +36,14 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/text_b"
+            android:id="@+id/text_h"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:text="@string/b"
+            android:text="@string/h"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/editText_b"
+            app:layout_constraintBaseline_toBaselineOf="@+id/editText_h"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
@@ -57,20 +58,20 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/text_a"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
         <EditText
-            android:id="@+id/editText_b"
+            android:id="@+id/editText_h"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="1dp"
             android:ems="10"
-            android:hint="@string/b"
+            android:hint="@string/h"
             android:inputType="numberDecimal"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/text_b"
+            app:layout_constraintStart_toEndOf="@+id/text_h"
             app:layout_constraintTop_toBottomOf="@+id/editText_a" />
 
         <Button
@@ -106,6 +107,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

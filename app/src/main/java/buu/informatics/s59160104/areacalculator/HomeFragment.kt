@@ -28,6 +28,15 @@ class HomeFragment : Fragment() {
         binding.buttonSquare.setOnClickListener{ view : View ->
             view.findNavController().navigate(R.id.action_homeFragment_to_squareFragment)
         }
+        binding.buttonRectangle.setOnClickListener{ view : View ->
+            view.findNavController().navigate(R.id.action_homeFragment_to_rectangleFragment)
+        }
+        binding.buttonTriangle.setOnClickListener{ view : View ->
+            view.findNavController().navigate(R.id.action_homeFragment_to_triangleFragment)
+        }
+        binding.buttonCircle.setOnClickListener{ view : View ->
+            view.findNavController().navigate(R.id.action_homeFragment_to_circleFragment)
+        }
 
         setHasOptionsMenu(true)
         return binding.root

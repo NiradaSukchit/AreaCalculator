@@ -21,7 +21,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/a_x_a"
+            android:id="@+id/text_for_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
@@ -39,9 +39,9 @@
             android:text="@string/equal"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="25sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/a_x_a"
+            app:layout_constraintBaseline_toBaselineOf="@+id/text_for_result"
             app:layout_constraintEnd_toStartOf="@+id/text_result"
-            app:layout_constraintStart_toEndOf="@+id/a_x_a" />
+            app:layout_constraintStart_toEndOf="@+id/text_for_result" />
 
         <TextView
             android:id="@+id/text_result"
@@ -74,7 +74,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button_home"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/a_x_a" />
+            app:layout_constraintTop_toBottomOf="@+id/text_for_result" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

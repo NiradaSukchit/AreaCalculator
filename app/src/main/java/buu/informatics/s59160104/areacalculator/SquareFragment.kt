@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import buu.informatics.s59160104.areacalculator.databinding.FragmentSquareBinding
+import kotlinx.android.synthetic.main.fragment_square.*
 
 /**
  * A simple [Fragment] subclass.
@@ -32,9 +33,16 @@ class SquareFragment : Fragment() {
         binding.buttonCalculate.setOnClickListener{ view : View ->
             view.findNavController().navigate(R.id.action_squareFragment_to_resultFragment)
         }
+        binding.buttonReset.setOnClickListener {
+            onReset()
+        }
 
         return binding.root
 
+    }
+
+    private fun onReset() {
+        editText_a.text = null
     }
 
 
