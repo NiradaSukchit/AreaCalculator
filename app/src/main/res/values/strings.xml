@@ -14,4 +14,15 @@
     <string name="circle">Circle</string>
     <string name="name">Nirada Sukchit 59160104</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="a">a:</string>
+    <string name="b">b:</string>
+    <string name="h">h:</string>
+    <string name="r">r:</string>
+    <string name="calculate">calculate</string>
+    <string name="reset">reset</string>
+    <string name="history">history</string>
+
+
 </resources>

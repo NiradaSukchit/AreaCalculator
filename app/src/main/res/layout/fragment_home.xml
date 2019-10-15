@@ -1,52 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginStart="20dp"
-    android:layout_marginTop="10dp"
-    android:orientation="vertical">
-
-    <!-- TODO: Update blank fragment layout -->
-
-    <Button
-        android:id="@+id/button_rectangle"
-        android:layout_width="@dimen/width"
-        android:layout_height="@dimen/height"
-        android:text="@string/rectangle" />
-
-    <Button
-        android:id="@+id/button_square"
-        android:layout_width="@dimen/width"
-        android:layout_height="@dimen/height"
-        android:text="@string/squre" />
-
-    <Button
-        android:id="@+id/button_right_triangle"
-        android:layout_width="@dimen/width"
-        android:layout_height="@dimen/height"
-        android:text="@string/right_triangle" />
-
-    <Button
-        android:id="@+id/button_triangle"
-        android:layout_width="@dimen/width"
-        android:layout_height="@dimen/height"
-        android:text="@string/triangle" />
-
-    <Button
-        android:id="@+id/button_circle"
-        android:layout_width="@dimen/width"
-        android:layout_height="@dimen/height"
-        android:text="@string/circle" />
-
-    <Button
-        android:id="@+id/button_oval"
-        android:layout_width="@dimen/width"
-        android:layout_height="@dimen/height"
-        android:text="@string/oval" />
+        <!-- TODO: Update blank fragment layout -->
 
 
-</LinearLayout>
+        <Button
+            android:id="@+id/button_rectangle"
+            android:layout_width="152dp"
+            android:layout_height="@dimen/height"
+            android:background="@drawable/icon_rectangle"
+            android:text="@string/rectangle"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            app:layout_constraintBottom_toTopOf="@+id/button_right_triangle"
+            app:layout_constraintEnd_toStartOf="@+id/button_square"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_square"
+            android:layout_width="139dp"
+            android:layout_height="@dimen/height"
+            android:background="@drawable/icon_square"
+            android:text="@string/squre"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            app:layout_constraintBottom_toTopOf="@+id/button_triangle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_rectangle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_right_triangle"
+            android:layout_width="152dp"
+            android:layout_height="@dimen/height"
+            android:background="@drawable/icon_right_triangle"
+            android:text="@string/right_triangle"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            app:layout_constraintBottom_toTopOf="@+id/button_oval"
+            app:layout_constraintEnd_toStartOf="@+id/button_triangle"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_rectangle" />
+
+        <Button
+            android:id="@+id/button_triangle"
+            android:layout_width="139dp"
+            android:layout_height="@dimen/height"
+            android:background="@drawable/icon_triangle"
+            android:text="@string/triangle"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            app:layout_constraintBottom_toTopOf="@+id/button_circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_right_triangle"
+            app:layout_constraintTop_toBottomOf="@+id/button_square" />
+
+        <Button
+            android:id="@+id/button_oval"
+            android:layout_width="155dp"
+            android:layout_height="@dimen/height"
+            android:background="@drawable/icon_oval"
+            android:text="@string/oval"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_circle"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_right_triangle" />
+
+        <Button
+            android:id="@+id/button_circle"
+            android:layout_width="138dp"
+            android:layout_height="@dimen/height"
+            android:background="@drawable/icon_circle"
+            android:text="@string/circle"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_oval"
+            app:layout_constraintTop_toBottomOf="@+id/button_triangle" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

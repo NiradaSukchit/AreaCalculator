@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:layout_height="match_parent">
 
 
     <!-- TODO: Update blank fragment layout -->
 
     <ImageView
         android:id="@+id/image_logo"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="411dp"
+        android:layout_height="268dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
         android:layout_weight="1"
-        android:src="@drawable/logo_about" />
+        android:src="@drawable/logo_about"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_title_about"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:layout_weight="1"
         android:text="@string/about_title"
         android:textAlignment="center"
-        android:textSize="45sp" />
+        android:textSize="45sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_logo" />
 
     <TextView
         android:id="@+id/content_about"
@@ -34,20 +40,30 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
         android:layout_weight="1"
         android:text="@string/about_content"
         android:textAlignment="gravity"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_title_about" />
 
     <TextView
         android:id="@+id/text_name_about"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
+        android:layout_marginBottom="20dp"
         android:layout_weight="1"
         android:text="@string/name"
         android:textAlignment="viewEnd"
-        android:textSize="25sp" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
