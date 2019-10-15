@@ -9,33 +9,34 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import buu.informatics.s59160104.areacalculator.databinding.FragmentCalculateBinding
-import buu.informatics.s59160104.areacalculator.databinding.FragmentHomeBinding
+import buu.informatics.s59160104.areacalculator.databinding.FragmentResultBinding
 
 /**
  * A simple [Fragment] subclass.
  */
-class CalculateFragment : Fragment() {
+class ResultFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = DataBindingUtil.inflate<FragmentCalculateBinding>(inflater,
-            R.layout.fragment_calculate,container,false)
+        val binding = DataBindingUtil.inflate<FragmentResultBinding>(
+            inflater,
+            R.layout.fragment_result, container, false
+        )
 
         // Inflate the layout for this fragment
 //        return inflater.inflate(R.layout.fragment_calculate, container, false)
 
-        binding.buttonHistory.setOnClickListener{ view : View ->
-            view.findNavController().navigate(R.id.action_calculateFragment_to_historyFragment)
+        binding.buttonHistory.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_resultFragment_to_historyFragment)
         }
-        binding.buttonCalculate.setOnClickListener{ view : View ->
-            view.findNavController().navigate(R.id.action_calculateFragment_to_resultFragment)
+        binding.buttonHome.setOnClickListener{ view: View ->
+            view.findNavController().navigate(R.id.action_resultFragment_to_homeFragment)
         }
 
         return binding.root
-
     }
 
 
