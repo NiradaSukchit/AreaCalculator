@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import buu.informatics.s59160104.areacalculator.databinding.FragmentCalculateBinding
 import buu.informatics.s59160104.areacalculator.databinding.FragmentResultBinding
 
 /**
@@ -27,7 +26,7 @@ class ResultFragment : Fragment() {
         )
 
         // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_calculate, container, false)
+//        return inflater.inflate(R.layout.fragment_square, container, false)
 
         binding.buttonHistory.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_resultFragment_to_historyFragment)

@@ -26,7 +26,7 @@ class HistoryFragment : Fragment() {
         )
 
         // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_calculate, container, false)
+//        return inflater.inflate(R.layout.fragment_square, container, false)
 
         binding.buttonHome.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_historyFragment_to_homeFragment)

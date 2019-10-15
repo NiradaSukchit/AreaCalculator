@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-12dp"
+        tools:layout_editor_absoluteY="-182dp">
 
         <!-- TODO: Update blank fragment layout -->
 
@@ -14,10 +17,11 @@
             android:id="@+id/button_rectangle"
             android:layout_width="152dp"
             android:layout_height="@dimen/height"
+            android:layout_marginTop="20dp"
             android:background="@drawable/icon_rectangle"
             android:text="@string/rectangle"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            app:layout_constraintBottom_toTopOf="@+id/button_right_triangle"
+            app:layout_constraintBottom_toTopOf="@+id/button_triangle"
             app:layout_constraintEnd_toStartOf="@+id/button_square"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,27 +31,15 @@
             android:id="@+id/button_square"
             android:layout_width="139dp"
             android:layout_height="@dimen/height"
+            android:layout_marginTop="20dp"
             android:background="@drawable/icon_square"
             android:text="@string/squre"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            app:layout_constraintBottom_toTopOf="@+id/button_triangle"
+            app:layout_constraintBottom_toTopOf="@+id/button_circle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/button_rectangle"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/button_right_triangle"
-            android:layout_width="152dp"
-            android:layout_height="@dimen/height"
-            android:background="@drawable/icon_right_triangle"
-            android:text="@string/right_triangle"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            app:layout_constraintBottom_toTopOf="@+id/button_oval"
-            app:layout_constraintEnd_toStartOf="@+id/button_triangle"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_rectangle" />
 
         <Button
             android:id="@+id/button_triangle"
@@ -56,24 +48,11 @@
             android:background="@drawable/icon_triangle"
             android:text="@string/triangle"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            app:layout_constraintBottom_toTopOf="@+id/button_circle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button_right_triangle"
-            app:layout_constraintTop_toBottomOf="@+id/button_square" />
-
-        <Button
-            android:id="@+id/button_oval"
-            android:layout_width="155dp"
-            android:layout_height="@dimen/height"
-            android:background="@drawable/icon_oval"
-            android:text="@string/oval"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button_circle"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_right_triangle" />
+            app:layout_constraintTop_toBottomOf="@+id/button_rectangle" />
 
         <Button
             android:id="@+id/button_circle"
@@ -85,8 +64,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button_oval"
-            app:layout_constraintTop_toBottomOf="@+id/button_triangle" />
+            app:layout_constraintStart_toEndOf="@+id/button_triangle"
+            app:layout_constraintTop_toBottomOf="@+id/button_square" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

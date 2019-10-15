@@ -11,20 +11,20 @@
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_calculateFragment"
-            app:destination="@id/calculateFragment" />
+            android:id="@+id/action_homeFragment_to_squareFragment"
+            app:destination="@id/squareFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/calculateFragment"
-        android:name="buu.informatics.s59160104.areacalculator.CalculateFragment"
-        android:label="CalculateFragment"
-        tools:layout="@layout/fragment_calculate">
+        android:id="@+id/squareFragment"
+        android:name="buu.informatics.s59160104.areacalculator.SquareFragment"
+        android:label="SquareFragment"
+        tools:layout="@layout/fragment_square">
         <action
-            android:id="@+id/action_calculateFragment_to_historyFragment"
+            android:id="@+id/squareFragment_to_historyFragment"
             app:destination="@id/historyFragment" />
         <action
-            android:id="@+id/action_calculateFragment_to_resultFragment"
+            android:id="@+id/action_squareFragment_to_resultFragment"
             app:destination="@id/resultFragment" />
     </fragment>
 
@@ -54,4 +54,9 @@
         android:name="buu.informatics.s59160104.areacalculator.AboutFragment"
         android:label="AboutFragment"
         tools:layout="@layout/fragment_about"/>
+    <fragment
+        android:id="@+id/rectangleFragment"
+        android:name="buu.informatics.s59160104.areacalculator.RectangleFragment"
+        android:label="fragment_rectangle"
+        tools:layout="@layout/fragment_rectangle" />
 </navigation>

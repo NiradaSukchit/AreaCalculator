@@ -26,7 +26,7 @@ class HomeFragment : Fragment() {
             R.layout.fragment_home,container,false)
 
         binding.buttonSquare.setOnClickListener{ view : View ->
-            view.findNavController().navigate(R.id.action_homeFragment_to_calculateFragment)
+            view.findNavController().navigate(R.id.action_homeFragment_to_squareFragment)
         }
 
         setHasOptionsMenu(true)
