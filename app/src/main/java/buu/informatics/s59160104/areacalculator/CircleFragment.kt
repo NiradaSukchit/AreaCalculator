@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import buu.informatics.s59160104.areacalculator.databinding.FragmentCircleBinding
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_circle.*
 
 /**
@@ -44,6 +45,10 @@ class CircleFragment : Fragment() {
     private fun onReset() {
 
         editText_r.text = null
+
+        var snack = view?.let { Snackbar.make(it, "Reset Success", Snackbar.LENGTH_LONG) }
+        snack?.show()
+
     }
 
 

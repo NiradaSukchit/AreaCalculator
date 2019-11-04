@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import buu.informatics.s59160104.areacalculator.databinding.FragmentHistoryBinding
 import buu.informatics.s59160104.areacalculator.databinding.FragmentResultBinding
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_history.*
 import kotlinx.android.synthetic.main.fragment_result.*
 import kotlinx.android.synthetic.main.fragment_result.text_result
@@ -46,5 +47,8 @@ class HistoryFragment : Fragment() {
         text_for_result.text = null
         text_equal.text = null
         text_result.text = null
+
+        var snack = view?.let { Snackbar.make(it, "Clear Success", Snackbar.LENGTH_LONG) }
+        snack?.show()
     }
 }
