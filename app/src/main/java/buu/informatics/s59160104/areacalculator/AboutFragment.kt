@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import timber.log.Timber
 
 /**
  * A simple [Fragment] subclass.
@@ -16,6 +17,8 @@ class AboutFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        Timber.i("About Called")
 
 
         // Inflate the layout for this fragment

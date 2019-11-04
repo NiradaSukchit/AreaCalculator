@@ -14,6 +14,7 @@ import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_history.*
 import kotlinx.android.synthetic.main.fragment_result.*
 import kotlinx.android.synthetic.main.fragment_result.text_result
+import timber.log.Timber
 import kotlinx.android.synthetic.main.fragment_history.text_equal as text_equal1
 import kotlinx.android.synthetic.main.fragment_history.text_for_result as text_for_result1
 
@@ -40,6 +41,8 @@ class HistoryFragment : Fragment() {
         binding.buttonClear.setOnClickListener {
             onClear()
         }
+
+        Timber.i("History Called")
 
         return binding.root
     }

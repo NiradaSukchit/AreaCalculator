@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import buu.informatics.s59160104.areacalculator.databinding.FragmentHomeBinding
+import timber.log.Timber
 
 /**
  * A simple [Fragment] subclass.
@@ -38,6 +39,8 @@ class HomeFragment : Fragment() {
         binding.buttonCircle.setOnClickListener{ view : View ->
             view.findNavController().navigate(R.id.action_homeFragment_to_circleFragment)
         }
+
+        Timber.i("Home Called")
 
         setHasOptionsMenu(true)
         return binding.root

@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 import buu.informatics.s59160104.areacalculator.databinding.FragmentSquareBinding
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_square.*
+import timber.log.Timber
 
 /**
  * A simple [Fragment] subclass.
@@ -37,6 +38,9 @@ class SquareFragment : Fragment() {
         binding.buttonReset.setOnClickListener {
             onReset()
         }
+
+        Timber.i("Result Called")
+
 
         return binding.root
 

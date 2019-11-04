@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.fragment_history.*
 import kotlinx.android.synthetic.main.fragment_result.*
 import kotlinx.android.synthetic.main.fragment_result.text_result
 import kotlinx.android.synthetic.main.fragment_triangle.*
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,6 +39,9 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
 
         NavigationUI.setupWithNavController(binding.navView, navController)
+
+        Timber.plant(Timber.DebugTree())
+
 
     }
     override fun onSupportNavigateUp(): Boolean {

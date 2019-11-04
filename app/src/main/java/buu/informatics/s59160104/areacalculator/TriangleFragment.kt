@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.fragment_circle.*
 import kotlinx.android.synthetic.main.fragment_rectangle.*
 import kotlinx.android.synthetic.main.fragment_rectangle.text_a
 import kotlinx.android.synthetic.main.fragment_triangle.*
+import timber.log.Timber
 import kotlinx.android.synthetic.main.fragment_rectangle.editText_a as editText_a1
 
 /**
@@ -44,6 +45,9 @@ class TriangleFragment : Fragment() {
         binding.buttonReset.setOnClickListener {
             onReset()
         }
+
+        Timber.i("Triangle Called")
+
 
         return binding.root
     }

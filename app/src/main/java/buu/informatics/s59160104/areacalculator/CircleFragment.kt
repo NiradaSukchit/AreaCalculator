@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 import buu.informatics.s59160104.areacalculator.databinding.FragmentCircleBinding
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_circle.*
+import timber.log.Timber
 
 /**
  * A simple [Fragment] subclass.
@@ -38,6 +39,9 @@ class CircleFragment : Fragment() {
         binding.buttonReset.setOnClickListener {
             onReset()
         }
+
+        Timber.i("Circle Called")
+
 
         return binding.root
     }

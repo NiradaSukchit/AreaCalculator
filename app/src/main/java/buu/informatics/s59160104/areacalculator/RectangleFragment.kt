@@ -12,6 +12,7 @@ import buu.informatics.s59160104.areacalculator.databinding.FragmentRectangleBin
 import buu.informatics.s59160104.areacalculator.databinding.FragmentSquareBinding
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_rectangle.*
+import timber.log.Timber
 
 /**
  * A simple [Fragment] subclass.
@@ -40,6 +41,8 @@ class RectangleFragment : Fragment() {
         binding.buttonReset.setOnClickListener {
             onReset()
         }
+
+        Timber.i("Rectangle Called")
 
         return binding.root
     }
