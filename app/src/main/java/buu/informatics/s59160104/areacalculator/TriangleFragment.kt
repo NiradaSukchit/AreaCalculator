@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import buu.informatics.s59160104.areacalculator.databinding.FragmentRectangleBinding
 import buu.informatics.s59160104.areacalculator.databinding.FragmentTriangleBinding
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_circle.*
 import kotlinx.android.synthetic.main.fragment_rectangle.*
 import kotlinx.android.synthetic.main.fragment_rectangle.text_a
@@ -50,5 +51,8 @@ class TriangleFragment : Fragment() {
      private fun onReset() {
          editText_h.text = null
          editText_a.text = null
+
+         var snack = view?.let { Snackbar.make(it, "Reset Success", Snackbar.LENGTH_LONG) }
+         snack?.show()
     }
 }
