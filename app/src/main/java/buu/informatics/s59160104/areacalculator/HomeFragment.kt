@@ -25,6 +25,7 @@ class HomeFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentHomeBinding>(inflater,
             R.layout.fragment_home,container,false)
 
+
         binding.buttonSquare.setOnClickListener{ view : View ->
             view.findNavController().navigate(R.id.action_homeFragment_to_squareFragment)
         }
@@ -42,14 +43,24 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+//    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+//        super.onCreateOptionsMenu(menu, inflater)
+//        inflater?.inflate(R.menu.options_menu, menu)
+//    }
+//    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+//        return NavigationUI.onNavDestinationSelected(item!!,
+//            view!!.findNavController())
+//                || super.onOptionsItemSelected(item)
+//    }
+
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater?.inflate(R.menu.options_menu, menu)
+        inflater?.inflate(R.menu.options_menu,menu)
     }
+
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        return NavigationUI.onNavDestinationSelected(item!!,
-            view!!.findNavController())
-                || super.onOptionsItemSelected(item)
+        return NavigationUI.onNavDestinationSelected(item!!,view!!.findNavController())
+                ||super.onOptionsItemSelected(item)
     }
 
 
