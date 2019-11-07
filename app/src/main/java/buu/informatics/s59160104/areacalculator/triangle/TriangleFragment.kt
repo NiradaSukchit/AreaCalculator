@@ -40,8 +40,10 @@ class TriangleFragment : Fragment() {
             textA = binding.editTextA.text.toString()
             textH = binding.editTextH.text.toString()
             viewModel.onCalculate(textA.toDouble(),textH.toDouble())
+            viewModel.onMerge(textA,textH)
 
-            view.findNavController().navigate(TriangleFragmentDirections.actionTriangleFragmentToResultFragment(viewModel.ans,"triangle"))
+
+            view.findNavController().navigate(TriangleFragmentDirections.actionTriangleFragmentToResultFragment(viewModel.ans,"triangle",viewModel.text))
         }
         binding.buttonHistory.setOnClickListener { view: View ->
 //            view.findNavController().navigate(R.id.action_triangleFragment_to_historyFragment)

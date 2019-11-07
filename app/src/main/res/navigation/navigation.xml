@@ -63,6 +63,9 @@
         <argument
             android:name="shape"
             app:argType="string" />
+        <argument
+            android:name="textResult"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"

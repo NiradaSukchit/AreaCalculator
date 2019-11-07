@@ -42,8 +42,10 @@ class RectangleFragment : Fragment() {
             textA = binding.editTextA.text.toString()
             textB = binding.editTextB.text.toString()
             viewModel.onCalculate(textA.toDouble(),textB.toDouble())
+            viewModel.onMerge(textA,textB)
 
-            view.findNavController().navigate(RectangleFragmentDirections.actionRectangleFragmentToResultFragment(viewModel.ans,"rectangle"))
+
+            view.findNavController().navigate(RectangleFragmentDirections.actionRectangleFragmentToResultFragment(viewModel.ans,"rectangle",viewModel.text))
         }
         binding.buttonHistory.setOnClickListener { view: View ->
             view.findNavController().navigate(RectangleFragmentDirections.actionRectangleFragmentToHistoryFragment())

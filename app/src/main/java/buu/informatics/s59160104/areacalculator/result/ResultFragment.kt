@@ -55,15 +55,19 @@ class ResultFragment : Fragment() {
 
         if (args.shape == "circle") {
             binding.imageResult.setImageDrawable(getResources().getDrawable(R.drawable.icon_circle))
+            binding.textForResult.text = args.textResult
         }
         if (args.shape == "rectangle") {
             binding.imageResult.setImageDrawable(getResources().getDrawable(R.drawable.icon_rectangle))
+            binding.textForResult.text = args.textResult
         }
         if (args.shape == "square") {
             binding.imageResult.setImageDrawable(getResources().getDrawable(R.drawable.icon_square))
+            binding.textForResult.text = args.textResult
         }
         if (args.shape == "triangle") {
             binding.imageResult.setImageDrawable(getResources().getDrawable(R.drawable.icon_triangle))
+            binding.textForResult.text = args.textResult
         }
 
         return binding.root

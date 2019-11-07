@@ -43,10 +43,12 @@ class SquareFragment : Fragment() {
         binding.buttonCalculate.setOnClickListener { view: View ->
             ansResult = binding.editTextA.text.toString()
             viewModel.onCalculate(ansResult.toDouble())
+            viewModel.onMerge(ansResult)
+
 
             view.findNavController()
                 .navigate(
-                    SquareFragmentDirections.actionSquareFragmentToResultFragment(viewModel.ans,"square")
+                    SquareFragmentDirections.actionSquareFragmentToResultFragment(viewModel.ans,"square",viewModel.text)
                 )
         }
         binding.buttonReset.setOnClickListener {
