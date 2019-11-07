@@ -1,4 +1,4 @@
-package buu.informatics.s59160104.areacalculator
+package buu.informatics.s59160104.areacalculator.history
 
 
 import android.os.Bundle
@@ -8,15 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import buu.informatics.s59160104.areacalculator.R
 import buu.informatics.s59160104.areacalculator.databinding.FragmentHistoryBinding
-import buu.informatics.s59160104.areacalculator.databinding.FragmentResultBinding
+//import buu.informatics.s59160104.areacalculator.result.HistoryFragmentDirections
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.fragment_history.*
 import kotlinx.android.synthetic.main.fragment_result.*
 import kotlinx.android.synthetic.main.fragment_result.text_result
 import timber.log.Timber
-import kotlinx.android.synthetic.main.fragment_history.text_equal as text_equal1
-import kotlinx.android.synthetic.main.fragment_history.text_for_result as text_for_result1
 
 /**
  * A simple [Fragment] subclass.
@@ -36,7 +34,8 @@ class HistoryFragment : Fragment() {
 //        return inflater.inflate(R.layout.fragment_square, container, false)
 
         binding.buttonHome.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_historyFragment_to_homeFragment)
+//            view.findNavController().navigate(R.id.action_historyFragment_to_homeFragment)
+            view.findNavController().navigate(HistoryFragmentDirections.actionHistoryFragmentToHomeFragment())
         }
         binding.buttonClear.setOnClickListener {
             onClear()

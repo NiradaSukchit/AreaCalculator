@@ -26,7 +26,7 @@
 
     <fragment
         android:id="@+id/squareFragment"
-        android:name="buu.informatics.s59160104.areacalculator.SquareFragment"
+        android:name="buu.informatics.s59160104.areacalculator.square.SquareFragment"
         android:label="Square"
         tools:layout="@layout/fragment_square">
         <action
@@ -39,7 +39,7 @@
 
     <fragment
         android:id="@+id/historyFragment"
-        android:name="buu.informatics.s59160104.areacalculator.HistoryFragment"
+        android:name="buu.informatics.s59160104.areacalculator.history.HistoryFragment"
         android:label="History"
         tools:layout="@layout/fragment_history">
         <action
@@ -48,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
-        android:name="buu.informatics.s59160104.areacalculator.ResultFragment"
+        android:name="buu.informatics.s59160104.areacalculator.result.ResultFragment"
         android:label="Result"
         tools:layout="@layout/fragment_result">
         <action
@@ -57,6 +57,12 @@
         <action
             android:id="@+id/action_resultFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <argument
+            android:name="ansResult"
+            app:argType="string" />
+        <argument
+            android:name="shape"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
@@ -65,7 +71,7 @@
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/rectangleFragment"
-        android:name="buu.informatics.s59160104.areacalculator.RectangleFragment"
+        android:name="buu.informatics.s59160104.areacalculator.rectangle.RectangleFragment"
         android:label="Rectangle"
         tools:layout="@layout/fragment_rectangle">
         <action
@@ -77,7 +83,7 @@
     </fragment>
     <fragment
         android:id="@+id/triangleFragment"
-        android:name="buu.informatics.s59160104.areacalculator.TriangleFragment"
+        android:name="buu.informatics.s59160104.areacalculator.triangle.TriangleFragment"
         android:label="fragment_triangle"
         tools:layout="@layout/fragment_triangle" >
         <action
@@ -89,7 +95,7 @@
     </fragment>
     <fragment
         android:id="@+id/circleFragment"
-        android:name="buu.informatics.s59160104.areacalculator.CircleFragment"
+        android:name="buu.informatics.s59160104.areacalculator.circle.CircleFragment"
         android:label="fragment_circle"
         tools:layout="@layout/fragment_circle" >
         <action

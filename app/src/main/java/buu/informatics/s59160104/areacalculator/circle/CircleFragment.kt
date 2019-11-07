@@ -1,4 +1,4 @@
-package buu.informatics.s59160104.areacalculator
+package buu.informatics.s59160104.areacalculator.circle
 
 
 import android.os.Bundle
@@ -7,8 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
+import buu.informatics.s59160104.areacalculator.R
+//import buu.informatics.s59160104.areacalculator.triangle.CircleFragmentDirections
 import buu.informatics.s59160104.areacalculator.databinding.FragmentCircleBinding
+import buu.informatics.s59160104.areacalculator.square.SquareViewModel
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_circle.*
 import timber.log.Timber
@@ -17,6 +21,7 @@ import timber.log.Timber
  * A simple [Fragment] subclass.
  */
 class CircleFragment : Fragment() {
+    lateinit var ansResult: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,21 +32,22 @@ class CircleFragment : Fragment() {
             R.layout.fragment_circle, container, false
         )
 
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_square, container, false)
+        val viewModel = ViewModelProviders.of(this).get(CircleViewModel::class.java)
 
         binding.buttonCalculate.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_circleFragment_to_resultFragment)
+            ansResult = binding.editTextR.text.toString()
+            viewModel.onCalculate(ansResult.toDouble())
+
+            view.findNavController().navigate(CircleFragmentDirections.actionCircleFragmentToResultFragment(viewModel.ans,"circle"))
         }
         binding.buttonHistory.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_circleFragment_to_historyFragment)
+            view.findNavController().navigate(CircleFragmentDirections.actionCircleFragmentToHistoryFragment())
         }
         binding.buttonReset.setOnClickListener {
             onReset()
         }
 
         Timber.i("Circle Called")
-
 
         return binding.root
     }
@@ -52,6 +58,10 @@ class CircleFragment : Fragment() {
 
         var snack = view?.let { Snackbar.make(it, "Reset Success", Snackbar.LENGTH_LONG) }
         snack?.show()
+
+    }
+
+    private fun onResult() {
 
     }
 

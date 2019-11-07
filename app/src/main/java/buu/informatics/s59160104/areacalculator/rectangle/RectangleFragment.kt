@@ -1,4 +1,4 @@
-package buu.informatics.s59160104.areacalculator
+package buu.informatics.s59160104.areacalculator.rectangle
 
 
 import android.os.Bundle
@@ -7,9 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
+import buu.informatics.s59160104.areacalculator.R
+import buu.informatics.s59160104.areacalculator.circle.CircleViewModel
+//import buu.informatics.s59160104.areacalculator.triangle.RectangleFragmentDirections
 import buu.informatics.s59160104.areacalculator.databinding.FragmentRectangleBinding
-import buu.informatics.s59160104.areacalculator.databinding.FragmentSquareBinding
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_rectangle.*
 import timber.log.Timber
@@ -18,6 +21,8 @@ import timber.log.Timber
  * A simple [Fragment] subclass.
  */
 class RectangleFragment : Fragment() {
+    lateinit var textA: String
+    lateinit var textB: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,14 +34,19 @@ class RectangleFragment : Fragment() {
             R.layout.fragment_rectangle, container, false
         )
 
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_square, container, false)
+        val viewModel = ViewModelProviders.of(this).get(RectangleViewModel::class.java)
+
+
 
         binding.buttonCalculate.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_rectangleFragment_to_resultFragment)
+            textA = binding.editTextA.text.toString()
+            textB = binding.editTextB.text.toString()
+            viewModel.onCalculate(textA.toDouble(),textB.toDouble())
+
+            view.findNavController().navigate(RectangleFragmentDirections.actionRectangleFragmentToResultFragment(viewModel.ans,"rectangle"))
         }
         binding.buttonHistory.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_rectangleFragment_to_historyFragment)
+            view.findNavController().navigate(RectangleFragmentDirections.actionRectangleFragmentToHistoryFragment())
         }
         binding.buttonReset.setOnClickListener {
             onReset()

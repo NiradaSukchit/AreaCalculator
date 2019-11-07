@@ -9,28 +9,17 @@
         tools:layout_editor_absoluteY="81dp">
         <!-- TODO: Update blank fragment layout -->
 
-        <ImageView
-            android:id="@+id/image_squre"
-            android:layout_width="299dp"
-            android:layout_height="223dp"
-            android:layout_marginTop="10dp"
-            android:contentDescription="TODO"
-            android:src="@drawable/square"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/text_for_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="24dp"
             android:text="@string/a_x_a"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image_squre" />
+            app:layout_constraintTop_toBottomOf="@+id/image_result" />
 
         <TextView
             android:id="@+id/text_equal"
@@ -58,6 +47,7 @@
             android:id="@+id/button_home"
             android:layout_width="155dp"
             android:layout_height="50dp"
+            android:layout_marginEnd="20dp"
             android:text="@string/home"
             app:layout_constraintBaseline_toBaselineOf="@+id/button_history"
             app:layout_constraintEnd_toEndOf="parent"
@@ -68,13 +58,23 @@
             android:id="@+id/button_history"
             android:layout_width="155dp"
             android:layout_height="50dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="32dp"
             android:text="@string/history"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button_home"
             app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_result"
+            android:layout_width="280dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_equal" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/square" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

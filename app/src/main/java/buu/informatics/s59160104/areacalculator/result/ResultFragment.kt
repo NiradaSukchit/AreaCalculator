@@ -1,12 +1,15 @@
-package buu.informatics.s59160104.areacalculator
+package buu.informatics.s59160104.areacalculator.result
 
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import buu.informatics.s59160104.areacalculator.R
 import buu.informatics.s59160104.areacalculator.databinding.FragmentResultBinding
 import timber.log.Timber
 
@@ -29,33 +32,56 @@ class ResultFragment : Fragment() {
 //        return inflater.inflate(R.layout.fragment_square, container, false)
 
         binding.buttonHistory.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_resultFragment_to_historyFragment)
+            //            view.findNavController().navigate(R.id.action_resultFragment_to_historyFragment)
+            view.findNavController()
+                .navigate(ResultFragmentDirections.actionResultFragmentToHistoryFragment())
+
         }
-        binding.buttonHome.setOnClickListener{ view: View ->
-            view.findNavController().navigate(R.id.action_resultFragment_to_homeFragment)
+        binding.buttonHome.setOnClickListener { view: View ->
+            //            view.findNavController().navigate(R.id.action_resultFragment_to_homeFragment)
+            view.findNavController()
+                .navigate(ResultFragmentDirections.actionResultFragmentToHomeFragment())
+
         }
 
         Timber.i("Result Called")
 
         setHasOptionsMenu(true)
 
+        val args = ResultFragmentArgs.fromBundle(arguments!!)
+//        Toast.makeText(context, args.ansResult, Toast.LENGTH_LONG).show()
+
+        binding.textResult.text = args.ansResult
+
+        if (args.shape == "circle") {
+            binding.imageResult.setImageDrawable(getResources().getDrawable(R.drawable.icon_circle))
+        }
+        if (args.shape == "rectangle") {
+            binding.imageResult.setImageDrawable(getResources().getDrawable(R.drawable.icon_rectangle))
+        }
+        if (args.shape == "square") {
+            binding.imageResult.setImageDrawable(getResources().getDrawable(R.drawable.icon_square))
+        }
+        if (args.shape == "triangle") {
+            binding.imageResult.setImageDrawable(getResources().getDrawable(R.drawable.icon_triangle))
+        }
 
         return binding.root
     }
 
     // Creating our Share Intent
-    private fun getShareIntent() : Intent {
+    private fun getShareIntent(): Intent {
 
         val shareIntent = Intent(Intent.ACTION_SEND)
         shareIntent.setType("text/plain")
             .putExtra(Intent.EXTRA_TEXT, getString(R.string.result))
         return shareIntent
     }
+
     // Starting an Activity with our new Intent
     private fun shareSuccess() {
         startActivity(getShareIntent())
     }
-
 
     // Showing the Share Menu Item Dynamically
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
