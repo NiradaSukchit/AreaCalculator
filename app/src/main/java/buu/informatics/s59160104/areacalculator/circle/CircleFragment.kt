@@ -23,7 +23,6 @@ import timber.log.Timber
  */
 class CircleFragment : Fragment() {
     lateinit var ansResult: String
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,15 +35,26 @@ class CircleFragment : Fragment() {
         val viewModel = ViewModelProviders.of(this).get(CircleViewModel::class.java)
 
         binding.buttonCalculate.setOnClickListener { view: View ->
-            ansResult = binding.editTextR.text.toString()
-            viewModel.onCalculate(ansResult.toDouble())
-            viewModel.onMerge(ansResult)
 
-            view.findNavController().navigate(CircleFragmentDirections.actionCircleFragmentToResultFragment(viewModel.ans,"circle",viewModel.text))
+            ansResult = binding.editTextR.text.toString()
+
+            if (binding.editTextR.length() > 0){
+                viewModel.onCalculate(ansResult.toDouble())
+                viewModel.onMerge(ansResult)
+
+                view.findNavController().navigate(
+                    CircleFragmentDirections.actionCircleFragmentToResultFragment(
+                        viewModel.ans,
+                        "circle",
+                        viewModel.text
+                    )
+                )
+            }else{
+                val snack = view.let { Snackbar.make(it, "Please enter the number of \"r\"", Snackbar.LENGTH_LONG) }
+                snack.show()
+            }
         }
-        binding.buttonHistory.setOnClickListener { view: View ->
-            view.findNavController().navigate(CircleFragmentDirections.actionCircleFragmentToHistoryFragment())
-        }
+
         binding.buttonReset.setOnClickListener {
             onReset()
         }
@@ -62,7 +72,6 @@ class CircleFragment : Fragment() {
         snack?.show()
 
     }
-
 
 
 }

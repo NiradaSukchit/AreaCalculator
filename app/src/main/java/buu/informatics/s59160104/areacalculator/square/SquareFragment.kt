@@ -36,20 +36,27 @@ class SquareFragment : Fragment() {
         )
         val viewModel = ViewModelProviders.of(this).get(SquareViewModel::class.java)
 
-        binding.buttonHistory.setOnClickListener { view: View ->
-            view.findNavController()
-                .navigate(SquareFragmentDirections.squareFragmentToHistoryFragment())
-        }
         binding.buttonCalculate.setOnClickListener { view: View ->
+
             ansResult = binding.editTextA.text.toString()
-            viewModel.onCalculate(ansResult.toDouble())
-            viewModel.onMerge(ansResult)
 
+            if (ansResult.length > 0) {
+                viewModel.onCalculate(ansResult.toDouble())
+                viewModel.onMerge(ansResult)
 
-            view.findNavController()
-                .navigate(
-                    SquareFragmentDirections.actionSquareFragmentToResultFragment(viewModel.ans,"square",viewModel.text)
-                )
+                view.findNavController()
+                    .navigate(
+                        SquareFragmentDirections.actionSquareFragmentToResultFragment(
+                            viewModel.ans,
+                            "square",
+                            viewModel.text
+                        )
+                    )
+            } else {
+                var snack = view?.let { Snackbar.make(it, "Please enter the number of \"a\"", Snackbar.LENGTH_LONG) }
+                snack?.show()
+
+            }
         }
         binding.buttonReset.setOnClickListener {
             onReset()

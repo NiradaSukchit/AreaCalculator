@@ -21,6 +21,7 @@ import timber.log.Timber
  * A simple [Fragment] subclass.
  */
 class RectangleFragment : Fragment() {
+
     lateinit var textA: String
     lateinit var textB: String
 
@@ -36,20 +37,33 @@ class RectangleFragment : Fragment() {
 
         val viewModel = ViewModelProviders.of(this).get(RectangleViewModel::class.java)
 
-
-
         binding.buttonCalculate.setOnClickListener { view: View ->
             textA = binding.editTextA.text.toString()
             textB = binding.editTextB.text.toString()
-            viewModel.onCalculate(textA.toDouble(),textB.toDouble())
-            viewModel.onMerge(textA,textB)
 
+            if(textA.length > 0 && textB.length > 0){
+                viewModel.onCalculate(textA.toDouble(), textB.toDouble())
+                viewModel.onMerge(textA, textB)
 
-            view.findNavController().navigate(RectangleFragmentDirections.actionRectangleFragmentToResultFragment(viewModel.ans,"rectangle",viewModel.text))
+                view.findNavController().navigate(
+                    RectangleFragmentDirections.actionRectangleFragmentToResultFragment(
+                        viewModel.ans,
+                        "rectangle",
+                        viewModel.text
+                    )
+                )
+            }else{
+                var snack = view?.let {
+                    Snackbar.make(
+                        it,
+                        "Please enter the number of \"a\" or \"b\"",
+                        Snackbar.LENGTH_LONG
+                    )
+                }
+                snack?.show()
+            }
         }
-        binding.buttonHistory.setOnClickListener { view: View ->
-            view.findNavController().navigate(RectangleFragmentDirections.actionRectangleFragmentToHistoryFragment())
-        }
+
         binding.buttonReset.setOnClickListener {
             onReset()
         }

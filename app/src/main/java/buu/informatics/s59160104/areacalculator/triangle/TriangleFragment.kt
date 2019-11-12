@@ -37,17 +37,32 @@ class TriangleFragment : Fragment() {
 
 
         binding.buttonCalculate.setOnClickListener { view: View ->
+
             textA = binding.editTextA.text.toString()
             textH = binding.editTextH.text.toString()
-            viewModel.onCalculate(textA.toDouble(),textH.toDouble())
-            viewModel.onMerge(textA,textH)
 
+            if (textA.length > 0 && textH.length > 0) {
 
-            view.findNavController().navigate(TriangleFragmentDirections.actionTriangleFragmentToResultFragment(viewModel.ans,"triangle",viewModel.text))
-        }
-        binding.buttonHistory.setOnClickListener { view: View ->
-//            view.findNavController().navigate(R.id.action_triangleFragment_to_historyFragment)
-            view.findNavController().navigate(TriangleFragmentDirections.actionTriangleFragmentToHistoryFragment())
+                viewModel.onCalculate(textA.toDouble(), textH.toDouble())
+                viewModel.onMerge(textA, textH)
+
+                view.findNavController().navigate(
+                    TriangleFragmentDirections.actionTriangleFragmentToResultFragment(
+                        viewModel.ans,
+                        "triangle",
+                        viewModel.text
+                    )
+                )
+            } else {
+                var snack = view?.let {
+                    Snackbar.make(
+                        it,
+                        "Please enter the number of \"a\" or \"h\"",
+                        Snackbar.LENGTH_LONG
+                    )
+                }
+                snack?.show()
+            }
         }
 
         binding.buttonReset.setOnClickListener {
@@ -56,15 +71,14 @@ class TriangleFragment : Fragment() {
 
         Timber.i("Triangle Called")
 
-
         return binding.root
     }
 
-     private fun onReset() {
-         editText_h.text = null
-         editText_a.text = null
+    private fun onReset() {
+        editText_h.text = null
+        editText_a.text = null
 
-         var snack = view?.let { Snackbar.make(it, "Reset Success", Snackbar.LENGTH_LONG) }
-         snack?.show()
+        var snack = view?.let { Snackbar.make(it, "Reset Success", Snackbar.LENGTH_LONG) }
+        snack?.show()
     }
 }

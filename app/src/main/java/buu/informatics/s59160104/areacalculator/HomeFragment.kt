@@ -20,9 +20,6 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_home, container, false)
-
         val binding = DataBindingUtil.inflate<FragmentHomeBinding>(inflater,
             R.layout.fragment_home,container,false)
 
@@ -46,15 +43,6 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-//        super.onCreateOptionsMenu(menu, inflater)
-//        inflater?.inflate(R.menu.options_menu, menu)
-//    }
-//    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-//        return NavigationUI.onNavDestinationSelected(item!!,
-//            view!!.findNavController())
-//                || super.onOptionsItemSelected(item)
-//    }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         super.onCreateOptionsMenu(menu, inflater)

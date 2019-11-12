@@ -1,16 +1,15 @@
-package buu.informatics.s59160104.areacalculator.result
+package buu.informatics.s59160104.areacalculator
 
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.*
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import buu.informatics.s59160104.areacalculator.R
 import buu.informatics.s59160104.areacalculator.databinding.FragmentResultBinding
+//import buu.informatics.s59160104.areacalculator.result.ResultFragmentArgs
+//import buu.informatics.s59160104.areacalculator.result.ResultFragmentDirections
 import timber.log.Timber
 
 /**
@@ -28,27 +27,17 @@ class ResultFragment : Fragment() {
             R.layout.fragment_result, container, false
         )
 
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_square, container, false)
-
-        binding.buttonHistory.setOnClickListener { view: View ->
-            //            view.findNavController().navigate(R.id.action_resultFragment_to_historyFragment)
-            view.findNavController()
-                .navigate(ResultFragmentDirections.actionResultFragmentToHistoryFragment())
-
-        }
         binding.buttonHome.setOnClickListener { view: View ->
-            //            view.findNavController().navigate(R.id.action_resultFragment_to_homeFragment)
             view.findNavController()
                 .navigate(ResultFragmentDirections.actionResultFragmentToHomeFragment())
-
         }
 
         Timber.i("Result Called")
 
         setHasOptionsMenu(true)
 
-        val args = ResultFragmentArgs.fromBundle(arguments!!)
+        val args =
+            ResultFragmentArgs.fromBundle(arguments!!)
 //        Toast.makeText(context, args.ansResult, Toast.LENGTH_LONG).show()
 
         binding.textResult.text = args.ansResult

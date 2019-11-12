@@ -9,7 +9,6 @@ class RectangleViewModel: ViewModel(){
     var ans = ""
     var text = ""
 
-
     fun onCalculate(textA:Double, textB:Double) {
         result = textA * textB
         ans = String.format("%.2f", result)

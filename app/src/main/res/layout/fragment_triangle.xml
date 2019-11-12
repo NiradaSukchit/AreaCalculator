@@ -19,6 +19,7 @@
             android:layout_width="300dp"
             android:layout_height="220dp"
             android:layout_marginTop="32dp"
+            android:contentDescription="@string/triangle"
             android:src="@drawable/triangle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +59,8 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/text_a"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView3"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/editText_h"
@@ -72,40 +74,28 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/text_h"
-            app:layout_constraintTop_toBottomOf="@+id/editText_a" />
+            app:layout_constraintTop_toBottomOf="@+id/editText_a"
+            android:importantForAutofill="no" />
 
         <Button
             android:id="@+id/button_reset"
             android:layout_width="155dp"
             android:layout_height="50dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="30dp"
             android:text="@string/reset"
-            app:layout_constraintBottom_toTopOf="@+id/button_calculate"
-            app:layout_constraintEnd_toStartOf="@+id/button_history"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_calculate"
             app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/button_history"
-            android:layout_width="155dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="8dp"
-            android:text="@string/history"
-            app:layout_constraintBottom_toTopOf="@+id/button_calculate"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button_reset" />
 
         <Button
             android:id="@+id/button_calculate"
-            android:layout_width="330dp"
+            android:layout_width="155dp"
             android:layout_height="50dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="20dp"
             android:text="@string/calculate"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/button_reset"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
